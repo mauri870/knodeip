@@ -28,8 +28,9 @@ func main() {
 		Run:   root}
 	rootCmd.PersistentFlags().StringVar(&kubeconfig, "kubeconfig", "",
 		"Path to the kubeconfig file. If empty will use the in-cluster mode.")
-	rootCmd.PersistentFlags().StringVar(&namespace, "namespace", "", "Cluster namespace.")
-	rootCmd.PersistentFlags().StringVar(&podName, "pod", "", "Pod name to query.")
+	rootCmd.PersistentFlags().StringVar(&namespace, "namespace", "",
+		"Cluster namespace. If empty will try to guess it from the environment.")
+	rootCmd.PersistentFlags().StringVar(&podName, "pod", "", "Pod name to query. If empty will try to guess it from the environment.")
 
 	if err := rootCmd.Execute(); err != nil {
 		log.Fatal(err)
