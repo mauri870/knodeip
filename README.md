@@ -1,6 +1,6 @@
 # knodeip
 
-```bash
+```txt
 $ knodeip --help
 Query the external ip addresses of a pod's node
 
