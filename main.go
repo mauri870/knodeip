@@ -48,7 +48,7 @@ func root(cmd *cobra.Command, args []string) {
 		log.Fatal(err)
 	}
 
-	// If no namespace is not provided, try to retrieve it assuming it's running in a pod,
+	// If no namespace is provided, try to retrieve it assuming it's running in a pod,
 	// otherwise use the default.
 	if namespace == "" {
 		contents, err := ioutil.ReadFile("/var/run/secrets/kubernetes.io/serviceaccount/namespace")
